@@ -1,3 +1,5 @@
+// tailwind.config.js - Modern Tailwind Configuration for Web3 Dashboard
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
