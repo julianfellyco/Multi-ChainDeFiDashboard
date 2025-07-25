@@ -2,80 +2,37 @@
   "name": "modern-defi-dashboard",
   "version": "1.0.0",
   "description": "Ultra-modern multi-chain DeFi portfolio tracker with Next.js 14, TypeScript, and wagmi v2",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "next": "^14.0.4",
+    "@tanstack/react-query": "^5.8.4",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "connectkit": "^1.5.3",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^10.16.5",
+    "next": "14.0.3",
+    "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.3.0",
-    "@types/node": "^20.10.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    
-    "wagmi": "^2.2.0",
-    "viem": "^2.0.0",
-    "@tanstack/react-query": "^5.8.0",
-    "connectkit": "^1.7.0",
-    
-    "tailwindcss": "^3.3.6",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
-    "@headlessui/react": "^1.7.17",
-    "@heroicons/react": "^2.0.18",
-    
-    "framer-motion": "^10.16.16",
-    "recharts": "^2.8.0",
-    "date-fns": "^2.30.0",
-    "clsx": "^2.0.0",
-    "tailwind-merge": "^2.2.0",
-    
-    "axios": "^1.6.2",
-    "lucide-react": "^0.294.0",
-    "react-hot-toast": "^2.4.1",
-    "next-themes": "^0.2.1"
+    "sonner": "^1.2.0",
+    "typescript": "^5.2.2",
+    "viem": "^1.19.3",
+    "wagmi": "^1.4.7"
   },
   "devDependencies": {
-    "eslint": "^8.55.0",
-    "eslint-config-next": "^14.0.4",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.53.0",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8.4.31",
     "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.9"
-  },
-  "keywords": [
-    "web3",
-    "defi",
-    "ethereum",
-    "polygon",
-    "arbitrum",
-    "base",
-    "multi-chain",
-    "wagmi",
-    "viem",
-    "next.js",
-    "typescript",
-    "portfolio-tracker",
-    "dapp",
-    "blockchain"
-  ],
-  "author": "Julian Fellyco <julianfellyco85@gmail.com>",
-  "license": "MIT",
-  "homepage": "https://julianfellyco.github.io/modern-defi-dashboard",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/julianfellyco/modern-defi-dashboard.git"
-  },
-  "bugs": {
-    "url": "https://github.com/julianfellyco/modern-defi-dashboard/issues"
+    "tailwindcss": "^3.3.5"
   }
 }
