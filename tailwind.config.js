@@ -1,137 +1,98 @@
-// tailwind.config.js - Modern Tailwind Configuration for Web3 Dashboard
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class'],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       colors: {
-        // Custom Web3 color palette
-        web3: {
-          primary: '#7c3aed', // Purple
-          secondary: '#ec4899', // Pink  
-          accent: '#06b6d4', // Cyan
-          success: '#10b981', // Emerald
-          warning: '#f59e0b', // Amber
-          error: '#ef4444', // Red
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
-        // Glassmorphism colors
-        glass: {
-          50: 'rgba(255, 255, 255, 0.1)',
-          100: 'rgba(255, 255, 255, 0.2)',
-          200: 'rgba(255, 255, 255, 0.3)',
-          300: 'rgba(0, 0, 0, 0.1)',
-          400: 'rgba(0, 0, 0, 0.2)',
-          500: 'rgba(0, 0, 0, 0.3)',
-        }
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'web3-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'defi-gradient': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        'ethereum-gradient': 'linear-gradient(135deg, #627eea 0%, #8b5cf6 100%)',
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.6s ease-in-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'slide-down': 'slideDown 0.6s ease-out',
-        'scale-in': 'scaleIn 0.4s ease-out',
-        'bounce-slow': 'bounce 2s infinite',
-        'pulse-slow': 'pulse 3s ease-in-out infinite',
-        'spin-slow': 'spin 3s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
         },
-        slideDown: {
-          '0%': { transform: 'translateY(-20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
-        scaleIn: {
-          '0%': { transform: 'scale(0.8)', opacity: '0' },
-          '100%': { transform: 'scale(1)', opacity: '1' },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
         },
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(124, 58, 237, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(124, 58, 237, 0.6)' },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
-      },
-      backdropBlur: {
-        xs: '2px',
-      },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '112': '28rem',
-        '128': '32rem',
       },
       borderRadius: {
-        '4xl': '2rem',
-        '5xl': '2.5rem',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
-      boxShadow: {
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
-        'glass-lg': '0 25px 50px rgba(0, 0, 0, 0.4)',
-        'neon': '0 0 20px rgba(124, 58, 237, 0.5)',
-        'neon-lg': '0 0 40px rgba(124, 58, 237, 0.7)',
+      keyframes: {
+        'accordion-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(20px)',
+      },
+      backgroundOpacity: {
+        '15': '0.15',
       },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    // Custom plugin for glassmorphism utilities
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       const newUtilities = {
-        '.glass-card': {
-          'background': 'rgba(255, 255, 255, 0.1)',
-          'backdrop-filter': 'blur(16px)',
-          'border': '1px solid rgba(255, 255, 255, 0.2)',
-          'box-shadow': '0 8px 32px rgba(0, 0, 0, 0.3)',
+        '.glass': {
+          background: 'rgba(255, 255, 255, 0.08)',
+          borderRadius: '16px',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
         },
-        '.glass-button': {
-          'background': 'rgba(255, 255, 255, 0.1)',
-          'backdrop-filter': 'blur(10px)',
-          'border': '1px solid rgba(255, 255, 255, 0.2)',
-          'transition': 'all 0.3s ease',
-          '&:hover': {
-            'background': 'rgba(255, 255, 255, 0.2)',
-            'border-color': 'rgba(255, 255, 255, 0.3)',
-          },
-        },
-        '.text-gradient': {
-          'background': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          '-webkit-background-clip': 'text',
-          'background-clip': 'text',
-          '-webkit-text-fill-color': 'transparent',
-        },
-        '.web3-gradient': {
-          'background': 'linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)',
-        },
-        '.ethereum-gradient': {
-          'background': 'linear-gradient(135deg, #627eea 0%, #8b5cf6 100%)',
+        '.glass-dark': {
+          background: 'rgba(0, 0, 0, 0.1)',
+          borderRadius: '16px',
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.05)',
         },
       }
       addUtilities(newUtilities)
